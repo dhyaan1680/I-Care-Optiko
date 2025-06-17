@@ -1,0 +1,334 @@
+/*────────────────────────────────────────────────────────────────────────
+  COLOR PALETTE & RESET
+────────────────────────────────────────────────────────────────────────*/
+:root {
+  --dark-gray:  #2b2b2b;
+  --off-white:  #f5f4f2;
+  --charcoal:   #1f1f1f;
+  --gold:       #cfa15a;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--off-white);
+  color: var(--charcoal);
+  line-height: 1.5;
+}
+
+/*────────────────────────────────────────────────────────────────────────
+  HEADER
+────────────────────────────────────────────────────────────────────────*/
+.site-header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--off-white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--gold);
+}
+.site-header__menu {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--charcoal);
+  cursor: pointer;
+}
+.site-header__branding {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.site-header__logo {
+  height: 2rem;
+}
+.site-header__brandname {
+  font-family: 'Orbitron', serif;
+  font-size: 1.5rem;
+  color: var(--charcoal);
+  margin-left: 0.5rem;
+}
+
+.site-header__spacer {
+  width: 1.5rem;
+}
+
+
+/*────────────────────────────────────────────────────────────────────────
+  DRAWER OVERLAY
+────────────────────────────────────────────────────────────────────────*/
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+.drawer-overlay.active {
+  display: block;
+}
+
+/*────────────────────────────────────────────────────────────────────────
+  DRAWER (SIDE MENU)
+────────────────────────────────────────────────────────────────────────*/
+.drawer {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 85%;
+  max-width: 320px;
+  height: 100%;
+  background: var(--off-white);
+  color: var(--charcoal);
+  transition: left 0.3s ease;
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 0;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.drawer--open {
+  left: 0 !important;
+}
+.drawer__close {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--charcoal);
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  align-self: flex-end;
+}
+.drawer__divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.2);
+  margin: 0.5rem 0 1rem;
+}
+.drawer__nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.drawer__nav a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: var(--charcoal);
+  text-decoration: none;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+}
+.drawer__nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.drawer__nav a:hover {
+  background: rgba(207, 161, 90, 0.1);
+}
+
+
+/* —— Visit & Contact Section —— */
+.location-contact {
+  padding: 4rem 1rem;
+  background-color: #fffdfa;
+  font-family: 'Nunito', sans-serif;
+  color: #1e1e1e;
+}
+.location-contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Section headings */
+.location-contact .section-heading {
+  font-family: 'Raleway', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+.location-contact .section-heading::after {
+  content: '';
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: #c89c5d;
+  margin: 0.5rem auto 0;
+}
+
+/* Map styling */
+.map-link {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+.map-link iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
+
+/* Text blocks */
+.address,
+.landmark,
+.hours {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0.5rem 0;
+}
+.landmark strong,
+.hours strong {
+  color: #1e1e1e;
+}
+
+/* Contact links */
+.contact-link {
+  display: inline-block;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #1e1e1e;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.contact-link:hover {
+  color: #c89c5d;
+}
+
+/* Two‑column on desktop */
+@media (min-width: 768px) {
+  .location-contact__grid {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+}
+
+
+/* —— Footer —— */
+/* —— Creative Footer Styles —— */
+/* —— Footer Base —— */
+.site-footer {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.5;
+}
+
+/* Grid container */
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 3rem 1rem 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Column headings */
+.footer-col h3,
+.footer-col h4 {
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+/* About column: remove light background */
+.footer-col.about {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+.footer-logo {
+  font-size: 1.75rem;
+}
+
+/* Copy text and list resets */
+.footer-col p,
+.footer-col ul {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  color: #e0e0e0;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links: neutral tint, no underline */
+.footer-col a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover {
+  color: #c89c5d;
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1rem;
+  text-align: center;
+}
+.footer-bottom p {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: #a5a5a5;
+}
+
+/* Social icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+.social-icons a {
+  font-size: 1.25rem;
+  color: #e0e0e0;
+  transition: transform 0.2s, color 0.2s;
+}
+.social-icons a:hover {
+  transform: translateY(-2px);
+  color: #c89c5d;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .footer-container {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+  }
+  .footer-col.links {
+    padding: 0 2rem;
+  }
+}
