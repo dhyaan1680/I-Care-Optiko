@@ -59,6 +59,13 @@ body {
   width: 1.5rem;
 }
 
+.site-header__branding-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 
 /*────────────────────────────────────────────────────────────────────────
   DRAWER OVERLAY
