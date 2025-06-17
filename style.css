@@ -62,8 +62,8 @@ body {
 .site-header__branding-link {
   display: flex;
   align-items: center;
-  text-decoration: none;
-  color: inherit;
+  text-decoration: none; /* removes the purple underline */
+  color: inherit;         /* keeps the existing font color */
 }
 
 
