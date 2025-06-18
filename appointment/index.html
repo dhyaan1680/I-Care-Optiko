@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>book appointment</title>
+  <title>Book an Appointment | I Care Optiko</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -51,28 +51,30 @@
     <button class="drawer__close" onclick="closeDrawer()">✕</button>
     <nav class="drawer__nav">
       <ul>
-        <li><a href="https://icareoptiko.store">Home</a></li>
-        <li><a href="./appointment/index.html">Book an Appointment</a></li>
-        <li><a href="./gallery/index.html">Gallery</a></li>
-        <li><a href="./reviews/index.html">Reviews</a></li>
-        <li><a href="./contact/index.html">Contact Us</a></li>
+        <li><a href="/"                target="_self">Home</a></li>
+<li><a href="/appointment/"    target="_self">Book an Appointment</a></li>
+<li><a href="/gallery/"        target="_self">Gallery</a></li>
+<li><a href="/reviews/"        target="_self">Reviews</a></li>
+<li><a href="/contact/"        target="_self">Contact Us</a></li>
       </ul>
     </nav>
   </div>
 
   <!-- HEADER BAR -->
   <header class="site-header">
-    <button class="site-header__menu" onclick="openDrawer()">☰</button>
-    <div class="site-header__branding">
+  <button class="site-header__menu" onclick="openDrawer()">☰</button>
+  <div class="site-header__branding">
+    <a href="/" class="site-header__branding-link" target="_self">      
       <img
         src="https://i.ibb.co/TB9Ymxpx/i-care-logo.png"
-        alt="I CARE OPTIKO"
+        alt="I CARE OPTIKO"
         class="site-header__logo"
       />
-      <span class="site-header__brandname">I CARE OPTIKO</span>
-    </div>
-    <div class="site-header__spacer"></div>
-  </header>
+      <span class="site-header__brandname">I CARE OPTIKO</span>
+    </a>
+  </div>
+  <div class="site-header__spacer"></div>
+</header>
 
   <!-- BOOKING SECTION -->
   <section id="booking" class="booking-section">
