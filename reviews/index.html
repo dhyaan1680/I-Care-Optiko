@@ -1,38 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Reviews</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Customer Reviews – I CARE OPTIKO</title>
-
-  <!-- Google Fonts -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book an Appointment | I CARE OPTIKO</title>
   <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Orbitron:wght@600&family=Savate&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Orbitron:wght@600&display=swap"
     rel="stylesheet"
   />
 
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
+  <!-- 1) Global styles (header, drawer, footer, grid, etc.) -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- 2) Local styles (appointment‑form specific) -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Overlay for closing drawer -->
-  <div id="drawerOverlay" class="drawer-overlay" onclick="closeDrawer()"></div>
 
-  <!-- Side Drawer -->
+  
+  <!-- Overlay for closing drawer -->
   <div id="drawerOverlay" class="drawer-overlay" onclick="closeDrawer()"></div>
 
   <!-- Side Drawer -->
@@ -40,25 +28,30 @@
     <button class="drawer__close" onclick="closeDrawer()">✕</button>
     <nav class="drawer__nav">
       <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#booking">Book an Appointment</a></li>
-        <li><a href="https://codepen.io/Prashant-Fadia/full/raVKGGw">Gallery</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="/"             target="_self">Home</a></li>
+        <li><a href="/appointment/" target="_self">Book an Appointment</a></li>
+        <li><a href="/gallery/"     target="_self">Gallery</a></li>
+        <li><a href="/reviews/"     target="_self">Reviews</a></li>
+        <li><a href="/contact/"     target="_self">Contact Us</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- HEADER -->
+
+  
+
+  <!-- HEADER BAR -->
   <header class="site-header">
     <button class="site-header__menu" onclick="openDrawer()">☰</button>
     <div class="site-header__branding">
-      <img
-        src="https://i.ibb.co/TB9Ymxpx/i-care-logo.png"
-        alt="I CARE OPTIKO"
-        class="site-header__logo"
-      />
-      <span class="site-header__brandname">I CARE OPTIKO</span>
+      <a href="/" class="site-header__branding-link" target="_self">
+        <img
+          src="https://i.ibb.co/TB9Ymxpx/i-care-logo.png"
+          alt="I CARE OPTIKO"
+          class="site-header__logo"
+        />
+        <span class="site-header__brandname">I CARE OPTIKO</span>
+      </a>
     </div>
     <div class="site-header__spacer"></div>
   </header>
@@ -67,127 +60,254 @@
   <section id="reviews" class="reviews-section">
     <h2 class="section-heading">What Our Customers Say</h2>
     <div class="reviews-grid">
+      
       <!-- Testimonial 1 -->
       <div class="testimonial">
         <div class="stars">★★★★★</div>
         <p class="review-text">
-          Amazing service and the glasses selection is top‑notch!
+          Amazing experience, will definitely go there again for all my optician needs. Had a good variety of frames and glasses available, Prashant was very helpful and thorough. And my glasses were ready the very next day!
         </p>
         <div class="reviewer">
-          <div class="avatar">AR</div>
-          <span>Ayushi R.</span>
+          <div class="avatar">SN</div>
+          <span>Sonam Nair</span>
         </div>
       </div>
+      
       <!-- Testimonial 2 -->
       <div class="testimonial">
-        <div class="stars">★★★★☆</div>
+        <div class="stars">★★★★★</div>
         <p class="review-text">
-          Very helpful staff. Got my eye test done quickly!
+          Good product, you can check your eyes and eye powers they have all equipments.
+Reliable shop for opticals, our family taking all their glasses from here since long. No complaints at all. They sell genuine branded products.
         </p>
         <div class="reviewer">
-          <div class="avatar">RK</div>
-          <span>Rahul K.</span>
+          <div class="avatar">BG</div>
+          <span>Bithin Ghosh</span>
         </div>
       </div>
-      <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <div class="stars">★★★★☆</div>
-        <p class="review-text">
-          Very helpful staff. Got my eye test done quickly!
-        </p>
-        <div class="reviewer">
-          <div class="avatar">RK</div>
-          <span>Rahul K.</span>
-        </div>
-      </div>
-      <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <div class="stars">★★★★☆</div>
-        <p class="review-text">
-          Very helpful staff. Got my eye test done quickly!
-        </p>
-        <div class="reviewer">
-          <div class="avatar">RK</div>
-          <span>Rahul K.</span>
-        </div>
-      </div>
-      <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <div class="stars">★★★★☆</div>
-        <p class="review-text">
-          Very helpful staff. Got my eye test done quickly!
-        </p>
-        <div class="reviewer">
-          <div class="avatar">RK</div>
-          <span>Rahul K.</span>
-        </div>
-      </div>
-      <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <div class="stars">★★★★☆</div>
-        <p class="review-text">
-          Very helpful staff. Got my eye test done quickly!
-        </p>
-        <div class="reviewer">
-          <div class="avatar">RK</div>
-          <span>Rahul K.</span>
-        </div>
-      </div>
-      <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <div class="stars">★★★★☆</div>
-        <p class="review-text">
-          Very helpful staff. Got my eye test done quickly!
-        </p>
-        <div class="reviewer">
-          <div class="avatar">RK</div>
-          <span>Rahul K.</span>
-        </div>
-      </div>
-      <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <div class="stars">★★★★☆</div>
-        <p class="review-text">
-          Very helpful staff. Got my eye test done quickly!
-        </p>
-        <div class="reviewer">
-          <div class="avatar">RK</div>
-          <span>Rahul K.</span>
-        </div>
-      </div>
-      <!-- Testimonial 2 -->
-      <div class="testimonial">
-        <div class="stars">★★★★☆</div>
-        <p class="review-text">
-          Very helpful staff. Got my eye test done quickly!
-        </p>
-        <div class="reviewer">
-          <div class="avatar">RK</div>
-          <span>Rahul K.</span>
-        </div>
-      </div>
+
       <!-- Testimonial 3 -->
       <div class="testimonial">
-        <div class="stars">★★★★☆</div>
-        <p class="review-text">Must Visit !!!</p>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          I have been purchasing my lenses and specs from I care for the last 25 years. The service is excellent, never had any complaints. I highly recommend them.
+        </p>
         <div class="reviewer">
-          <div class="avatar">HH</div>
-          <span>Hehe Haha</span>
+          <div class="avatar">RB</div>
+          <span>Rakhi Basant</span>
         </div>
       </div>
+
       <!-- Testimonial 4 -->
       <div class="testimonial">
         <div class="stars">★★★★★</div>
         <p class="review-text">
-          I love the stylish frames! Will definitely recommend.
+          I and many of my friends have been going to I Care for the past 20 years and the experiences of care and professionally advice and service given by Prashant and his team have been great.I will never change to any other opticians.
         </p>
         <div class="reviewer">
-          <div class="avatar">SM</div>
-          <span>Sneha M.</span>
+          <div class="avatar">GR</div>
+          <span>Gen Rods</span>
         </div>
       </div>
-    </div>
+
+      <!-- Testimonial 5 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Had a great experience, purchased numbered lenses and they were easy on the pockets which was a total win win. The frames were done very well , super happy
+        </p>
+        <div class="reviewer">
+          <div class="avatar">AS</div>
+          <span>Anjumsaher Shaikh</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 6 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Excellent service wverytime I come here and he mostly has what I want or orders it for me. Have lots of choices for different lens for glasses. Have been coming here for years and would highly recommend this shop and the owner for his fantastic service.
+        </p>
+        <div class="reviewer">
+          <div class="avatar">HR</div>
+          <span>Hemangini Rakhangi</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 7 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Got excellent treatment n very helpful. Needed to make it urgently n got excellent support from them. Very precise n punctual in delivery too.
+        </p>
+        <div class="reviewer">
+          <div class="avatar">ZK</div>
+          <span>Zainub Kachwala</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 8 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          I like the service, very prompt and glass frame collection is first class. People should try out this optical Store
+        </p>
+        <div class="reviewer">
+          <div class="avatar">KR</div>
+          <span>Kalvin Ralph</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 9 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          An expert, a gentlemen and someone you can trust. Got my glasses made here and it was a seamless experience! Would 100% recommend
+        </p>
+        <div class="reviewer">
+          <div class="avatar">WC</div>
+          <span>Wing Choy Chen</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 10 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Great/quick service. Good recommendations on numbered eyeglasses, and aftercare and maintenance of the eyewear. Thank you Prashant ji.
+        </p>
+        <div class="reviewer">
+          <div class="avatar">KL</div>
+          <span>Keval Lilani</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 11 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          My family and I have been coming to I-Care for many years. Very wide range of spectacle frames and sunglasses to choose from. Very good customer service by Mr Prashant who has a lot of experience in this field. He will give you the right recommendations and you can trust the quality of all the products.
+        </p>
+        <div class="reviewer">
+          <div class="avatar">RS</div>
+          <span>Reshma Sood</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 12 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Fantastic service and advice by Mr. Prashant  and Bhavini Ma'am. Every time I visit their shop, they exceed my expectation.
+        </p>
+        <div class="reviewer">
+          <div class="avatar">PT</div>
+          <span>Prerana Thapa</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 13 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Have been going to I-Care Optiko for many years. Excellent service, expert advice, large range of quality products and great after sales service. Would highly recommend visiting this store.
+        </p>
+        <div class="reviewer">
+          <div class="avatar">HK</div>
+          <span>Heena Karer</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 14 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          I care optics is a friendly neighbourhood optician  shop in Andheri Versova seven bunglow area . The owner Prashant is well experienced , courteous and advices right quality products as per customer requirement and budget . Highly recommend this establishment 👍 …
+        </p>
+        <div class="reviewer">
+          <div class="avatar">AD</div>
+          <span>Ajay Dharamshi</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 15 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Great service.And with a smile!Had lost my glasses and needed a quick replacement.Got my set of both reading glasses and another one the next day. At a great price too..
+        </p>
+        <div class="reviewer">
+          <div class="avatar">MV</div>
+          <span>Madhulika Varma</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 16 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          The very fact that I have rated 5/5 is enough proof of the services am sure !!
+        </p>
+        <div class="reviewer">
+          <div class="avatar">JM</div>
+          <span>Julian Mathew</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 17 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Excellent service provided by Mr Prashant. Good knowledge and guides customer correctly in a friendly manner without commercial considerations.
+        </p>
+        <div class="reviewer">
+          <div class="avatar">KK</div>
+          <span>Kerman Karwa</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 18 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          I have been using 4 other more well known Opticians over the past 25 years and I have found I Care Optiko the best. Prashant and his staff are friendly, patient and professional. The customer gets individual attention and prompt service and delivery of spectacles. I care is highly recommended.
+        </p>
+        <div class="reviewer">
+          <div class="avatar">VK</div>
+          <span>Vivek Kulkarni</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 19 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Excellent service I Care Optiko. Been a customer for nearly a decade. Thank you Prashanth for your kind and excellent service always!
+        </p>
+        <div class="reviewer">
+          <div class="avatar">HK</div>
+          <span>Hanna Khurshid</span>
+        </div>
+      </div>
+
+      <!-- Testimonial 20 -->
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">
+          Very accurate diagnosis. A although I was told one must go to an ophthalmologist to get your number tested, however with i Care one doesn’t need to.  The gentleman here knows his job really well. The service is very prompt and professional.
+        </p>
+        <div class="reviewer">
+          <div class="avatar">NC</div>
+          <span>Niraj Chandan</span>
+        </div>
+      </div>
   </section>
+
+
+
+
+
+  
 
   <!-- FOOTER -->
   <!-- Creative Footer -->
@@ -199,10 +319,10 @@
     <!-- Contact & Hours -->
     <div class="footer-col contact">
       <h4>Contact & Hours</h4>
-      <p>Shop No. 1, Savera Apts., JP Road,<br/>Seven Bungalows, Andheri (W), Mumbai 400 061</p>
-      <p><strong>Mon–Sat:</strong> 10:30 AM – 8:30 PM<br/><strong>Sun:</strong> By appointment</p>
+      <p>Shop No. 1, Savera Apts, Picnic Cottage, Opp. Central Bank, Seven Bungalows, JP Road, Andheri (W), Mumbai – 400 061</p>
+      <p><strong>Mon–Sat:</strong> 10:45 AM – 8:45 PM<br/><strong>Sun:</strong> By Appointment Basis</p>
       <p>
-        <a href="tel:9511827502">📞 Call: 95118 27502</a><br/>
+        <a href="tel:9511827502">📞 Call: 95118 27502 / 98704 39304e</a><br/>
         <a href="https://wa.me/9511827502" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 95118 27502</a>
       </p>
     </div>
