@@ -12,14 +12,14 @@
   <!-- 1) Global styles (header, drawer, footer, grid, etc.) -->
   <link rel="stylesheet" href="../style.css">
 
-  <!-- 2) Local styles (appointment‑form specific) -->
+  <!-- 2) Local styles (reviews‑specific) -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Single deferred JS for drawer + carousels -->
+  <script src="script.js" defer></script>
 </head>
 
 <body>
-
-
-  
   <!-- Overlay for closing drawer -->
   <div id="drawerOverlay" class="drawer-overlay" onclick="closeDrawer()"></div>
 
@@ -36,9 +36,6 @@
       </ul>
     </nav>
   </div>
-
-
-  
 
   <!-- HEADER BAR -->
   <header class="site-header">
@@ -301,40 +298,26 @@ Reliable shop for opticals, our family taking all their glasses from here since 
           <span>Niraj Chandan</span>
         </div>
       </div>
-    </div>   
+
+    </div>  <!-- ← close .reviews-grid -->
   </section>
 
-
-
-
-
-  
-
   <!-- FOOTER -->
-  <!-- Creative Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <!-- About / Logo -->
-
-
-    <!-- Contact & Hours -->
-    <div class="footer-col contact">
-      <h4>Contact & Hours</h4>
-      <p>Shop No. 1, Savera Apts, Picnic Cottage, Opp. Central Bank, Seven Bungalows, JP Road, Andheri (W), Mumbai – 400 061</p>
-      <p><strong>Mon–Sat:</strong> 10:45 AM – 8:45 PM<br/><strong>Sun:</strong> By Appointment Basis</p>
-      <p>
-        <a href="tel:9511827502">📞 Call: 95118 27502 / 98704 39304e</a><br/>
-        <a href="https://wa.me/9511827502" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 95118 27502</a>
-      </p>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col contact">
+        <h4>Contact & Hours</h4>
+        <p>Shop No. 1, Savera Apts, Picnic Cottage, Opp. Central Bank, Seven Bungalows, JP Road, Andheri (W), Mumbai – 400 061</p>
+        <p><strong>Mon–Sat:</strong> 10:45 AM – 8:45 PM<br/><strong>Sun:</strong> By Appointment Basis</p>
+        <p>
+          <a href="tel:9511827502">📞 Call: 95118 27502 / 98704 39304</a><br/>
+          <a href="https://wa.me/9511827502" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 95118 27502</a>
+        </p>
+      </div>
     </div>
-  </div>
-
-  <!-- Bottom bar -->
-<div class="footer-bottom">
-  <p>© 2025 I CARE OPTIKO. All Rights Reserved.</p>
-</div>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
+    <div class="footer-bottom">
+      <p>© 2025 I CARE OPTIKO. All Rights Reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
