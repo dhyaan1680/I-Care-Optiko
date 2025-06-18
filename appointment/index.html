@@ -17,19 +17,20 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 
-  <!-- Rockwell Extra Bold -->
+  <!-- Rockwell Extra Bold (if you’re using it) -->
   <style>
     @font-face {
       font-family: 'Rockwell Extra Bold';
-      src: url('/fonts/RockwellExtraBold.woff2') format('woff2'),
-           url('/fonts/RockwellExtraBold.woff')  format('woff');
+      /* If your fonts folder lives next to this HTML file: */
+      src: url('fonts/RockwellExtraBold.woff2') format('woff2'),
+           url('fonts/RockwellExtraBold.woff')  format('woff');
       font-weight: 800;
       font-style: normal;
     }
   </style>
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="/styles.css">
+  <!-- load the CSS that sits right here in /appointment/ -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -56,7 +57,7 @@
     <div class="site-header__branding">
       <a href="/" class="site-header__branding-link" target="_self">
         <img
-          src="https://i.ibb.co/TB9Ymxpx/i-care-logo.png"
+          src="../i-care-logo.png"
           alt="I CARE OPTIKO"
           class="site-header__logo"
         />
@@ -131,7 +132,7 @@
           Opp. Central Bank, Andheri (W), Mumbai 400 061
         </p>
         <p>
-          <strong>Mon–Sat:</strong> 10:30 AM – 8:30 PM<br />
+          <strong>Mon–Sat:</strong> 10:45 AM – 8:45 PM<br />
           <strong>Sun:</strong> By appointment
         </p>
         <p>
@@ -150,7 +151,7 @@
     </div>
   </footer>
 
-  <!-- Main JS -->
-  <script src="/script.js"></script>
+  <!-- load the JS that sits right here in /appointment/ -->
+  <script src="script.js"></script>
 </body>
 </html>
