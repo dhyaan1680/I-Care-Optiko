@@ -1,58 +1,66 @@
-// Drawer
-function openDrawer() {
-  document.getElementById('drawer').classList.add('drawer--open');
-  document.getElementById('drawerOverlay').classList.add('active');
-}
-function closeDrawer() {
-  document.getElementById('drawer').classList.remove('drawer--open');
-  document.getElementById('drawerOverlay').classList.remove('active');
-}
-
-// Carousel logic (exact main‑page code)
-// Keep track of which carousels are animating
-const isSliding = {};
-
-// Revised moveSlide
-function moveSlide(id, direction) {
-  // If this carousel is already sliding, ignore further calls
-  if (isSliding[id]) return;
-  isSliding[id] = true;
-
-  const track = document.querySelector(`#${id} .carousel-track`);
-  const slides = track.children;
-  const slideWidth = slides[0].getBoundingClientRect().width;
-  const duration = 500; // match your CSS transition-duration
-
-  if (direction === 1) {
-    track.style.transition = `transform ${duration}ms ease`;
-    track.style.transform = `translateX(-${slideWidth}px)`;
-
-    setTimeout(() => {
-      // move first slide to end, reset transform
-      track.appendChild(track.firstElementChild);
-      track.style.transition = 'none';
-      track.style.transform = 'translateX(0)';
-      isSliding[id] = false;
-    }, duration);
-
-  } else {
-    // move last slide to front instantly, then animate back to 0
-    track.insertBefore(track.lastElementChild, track.firstElementChild);
-    track.style.transition = 'none';
-    track.style.transform = `translateX(-${slideWidth}px)`;
-
-    // next frame: animate back to 0
-    requestAnimationFrame(() => {
-      track.style.transition = `transform ${duration}ms ease`;
-      track.style.transform = 'translateX(0)';
-    });
-
-    setTimeout(() => {
-      isSliding[id] = false;
-    }, duration);
+document.addEventListener('DOMContentLoaded', () => {
+  // ─── DRAWER ──────────────────────────────────────────────
+  function openDrawer() {
+    document.getElementById('drawer').classList.add('drawer--open');
+    document.getElementById('drawerOverlay').classList.add('active');
   }
-}
+  function closeDrawer() {
+    document.getElementById('drawer').classList.remove('drawer--open');
+    document.getElementById('drawerOverlay').classList.remove('active');
+  }
+  // wire drawer buttons (assumes you have elements with IDs 'openBtn' and 'closeBtn' or similar)
+  document.getElementById('openDrawerBtn')?.addEventListener('click', openDrawer);
+  document.getElementById('closeDrawerBtn')?.addEventListener('click', closeDrawer);
+  document.getElementById('drawerOverlay')?.addEventListener('click', closeDrawer);
 
-// Auto‐slide every 3s for each carousel
-setInterval(() => moveSlide('celebrityCarousel', 1), 3000);
-setInterval(() => moveSlide('storeCarousel',     1), 3000);
+  // ─── CAROUSELS ────────────────────────────────────────────
+  const isSliding = {};
+
+  function moveSlide(carouselEl, direction) {
+    const id = carouselEl.id;
+    if (isSliding[id]) return;
+    isSliding[id] = true;
+
+    const track = carouselEl.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    const duration = 500;
+
+    if (direction === 1) {
+      // next
+      track.style.transition = `transform ${duration}ms ease`;
+      track.style.transform = `translateX(-${slideWidth}px)`;
+      setTimeout(() => {
+        track.appendChild(slides[0]);
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        isSliding[id] = false;
+      }, duration);
+
+    } else {
+      // prev
+      track.insertBefore(slides[slides.length - 1], slides[0]);
+      track.style.transition = 'none';
+      track.style.transform = `translateX(-${slideWidth}px)`;
+      requestAnimationFrame(() => {
+        track.style.transition = `transform ${duration}ms ease`;
+        track.style.transform = 'translateX(0)';
+      });
+      setTimeout(() => {
+        isSliding[id] = false;
+      }, duration);
+    }
+  }
+
+  document.querySelectorAll('.carousel').forEach(carouselEl => {
+    // buttons
+    carouselEl.querySelectorAll('.carousel-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const dir = parseInt(btn.dataset.direction, 10);
+        moveSlide(carouselEl, dir);
+      });
+    });
+    // auto‑slide
+    setInterval(() => moveSlide(carouselEl, 1), 3000);
+  });
+});
