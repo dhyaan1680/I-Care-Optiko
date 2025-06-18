@@ -1,45 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>FINAL GALLERY</title>
-  <!-- Google Fonts -->
-<link
-  href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Orbitron:wght@700&family=Raleway:wght@700&display=swap"
-  rel="stylesheet"
-/>
-<!-- Font Awesome -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
-<link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Gallery | I CARE OPTIKO</title>
-
-  <!-- Google Fonts -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | I CARE OPTIKO</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Orbitron:wght@600&display=swap"
     rel="stylesheet"
   />
-  <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
 
+  <!-- 1) Global styles (header, drawer, footer, grid, etc.) -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- 2) Local styles (appointment‑form specific) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
   <!-- Overlay for closing drawer -->
   <div id="drawerOverlay" class="drawer-overlay" onclick="closeDrawer()"></div>
 
@@ -48,25 +25,27 @@
     <button class="drawer__close" onclick="closeDrawer()">✕</button>
     <nav class="drawer__nav">
       <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#booking">Book an Appointment</a></li>
-        <li><a href="https://codepen.io/Prashant-Fadia/full/raVKGGw">Gallery</a></li>
-        <li><a href="#reviews">Reviews</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="/"             target="_self">Home</a></li>
+        <li><a href="/appointment/" target="_self">Book an Appointment</a></li>
+        <li><a href="/gallery/"     target="_self">Gallery</a></li>
+        <li><a href="/reviews/"     target="_self">Reviews</a></li>
+        <li><a href="/contact/"     target="_self">Contact Us</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- Header -->
+  <!-- HEADER BAR -->
   <header class="site-header">
     <button class="site-header__menu" onclick="openDrawer()">☰</button>
     <div class="site-header__branding">
-      <img
-        src="https://i.ibb.co/TB9Ymxpx/i-care-logo.png"
-        alt="I CARE OPTIKO"
-        class="site-header__logo"
-      />
-      <span class="site-header__brandname">I CARE OPTIKO</span>
+      <a href="/" class="site-header__branding-link" target="_self">
+        <img
+          src="https://i.ibb.co/TB9Ymxpx/i-care-logo.png"
+          alt="I CARE OPTIKO"
+          class="site-header__logo"
+        />
+        <span class="site-header__brandname">I CARE OPTIKO</span>
+      </a>
     </div>
     <div class="site-header__spacer"></div>
   </header>
@@ -211,10 +190,10 @@
     <!-- Contact & Hours -->
     <div class="footer-col contact">
       <h4>Contact & Hours</h4>
-      <p>Shop No. 1, Savera Apts., JP Road,<br/>Seven Bungalows, Andheri (W), Mumbai 400 061</p>
-      <p><strong>Mon–Sat:</strong> 10:30 AM – 8:30 PM<br/><strong>Sun:</strong> By appointment</p>
+      <p>Shop No. 1, Savera Apts, Picnic Cottage, Opp. Central Bank, Seven Bungalows, JP Road, Andheri (W), Mumbai – 400 061</p>
+      <p><strong>Mon–Sat:</strong> 10:45 AM – 8:45 PM<br/><strong>Sun:</strong> By Appointment Basis</p>
       <p>
-        <a href="tel:9511827502">📞 Call: 95118 27502</a><br/>
+        <a href="tel:9511827502">📞 Call: 95118 27502 / 98704 39304</a><br/>
         <a href="https://wa.me/9511827502" target="_blank" rel="noopener noreferrer">💬 WhatsApp: 95118 27502</a>
       </p>
     </div>
