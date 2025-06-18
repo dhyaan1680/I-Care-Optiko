@@ -5,32 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Book an Appointment | I CARE OPTIKO</title>
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Orbitron:wght@600&family=Savate&display=swap"
-    rel="stylesheet"
-  />
+  <!-- 1) GLOBAL STYLES (header, drawer, footer) -->
+  <link rel="stylesheet" href="../styles.css">
 
-  <!-- Font Awesome Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
-  <!-- Rockwell Extra Bold (optional) -->
-  <style>
-    @font-face {
-      font-family: 'Rockwell Extra Bold';
-      src: url('fonts/RockwellExtraBold.woff2') format('woff2'),
-           url('fonts/RockwellExtraBold.woff')  format('woff');
-      font-weight: 800;
-      font-style: normal;
-    }
-  </style>
-
-  <!-- Local CSS: make sure this file is at /appointment/style.css -->
+  <!-- 2) LOCAL STYLES (appointment form only) -->
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
+  <!-- (your drawer + header here) -->
+  <div id="drawerOverlay" class="drawer-overlay" onclick="closeDrawer()"></div>
+  <div id="drawer" class="drawer">
+    <!-- … -->
+  </div>
+  <header class="site-header">
+    <button class="site-header__menu" onclick="openDrawer()">☰</button>
+    <div class="site-header__branding">
+      <a href="/" class="site-header__branding-link" target="_self">
+        <img
+          src="https://i.ibb.co/TB9Ymxpx/i-care-logo.png"
+          alt="I CARE OPTIKO"
+          class="site-header__logo"
+        />
+        <span class="site-header__brandname">I CARE OPTIKO</span>
+      </a>
+    </div>
+    <div class="site-header__spacer"></div>
+  </header>
+
+  <!-- rest of appointment page… -->
+
 
 <body>
   <!-- Overlay for closing drawer -->
