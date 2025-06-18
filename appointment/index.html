@@ -5,35 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Book an Appointment | I CARE OPTIKO</title>
 
-  <!-- 1) GLOBAL STYLES (header, drawer, footer) -->
-  <link rel="stylesheet" href="../styles.css">
+  <!-- 1) Global styles (header, drawer, footer, grid, etc.) -->
+  <link rel="stylesheet" href="../style.css">
 
-  <!-- 2) LOCAL STYLES (appointment form only) -->
+  <!-- 2) Local styles (appointment‑form specific) -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <!-- (your drawer + header here) -->
-  <div id="drawerOverlay" class="drawer-overlay" onclick="closeDrawer()"></div>
-  <div id="drawer" class="drawer">
-    <!-- … -->
-  </div>
-  <header class="site-header">
-    <button class="site-header__menu" onclick="openDrawer()">☰</button>
-    <div class="site-header__branding">
-      <a href="/" class="site-header__branding-link" target="_self">
-        <img
-          src="https://i.ibb.co/TB9Ymxpx/i-care-logo.png"
-          alt="I CARE OPTIKO"
-          class="site-header__logo"
-        />
-        <span class="site-header__brandname">I CARE OPTIKO</span>
-      </a>
-    </div>
-    <div class="site-header__spacer"></div>
-  </header>
-
-  <!-- rest of appointment page… -->
-
 
 <body>
   <!-- Overlay for closing drawer -->
@@ -86,17 +63,14 @@
           <label for="name">Full Name</label>
           <input id="name" name="name" type="text" required />
         </div>
-
         <div class="form-group">
           <label for="email">Email Address</label>
           <input id="email" name="email" type="email" required />
         </div>
-
         <div class="form-group">
           <label for="phone">Phone Number</label>
           <input id="phone" name="phone" type="tel" required />
         </div>
-
         <div class="form-group">
           <label for="service">Service</label>
           <select id="service" name="service" required>
@@ -106,17 +80,14 @@
             <option>Frame Adjustment</option>
           </select>
         </div>
-
         <div class="form-group">
           <label for="date">Preferred Date</label>
           <input id="date" name="date" type="date" required />
         </div>
-
         <div class="form-group">
           <label for="time">Preferred Time</label>
           <input id="time" name="time" type="time" required />
         </div>
-
         <div class="form-group full-width">
           <button type="submit">Submit</button>
         </div>
@@ -153,7 +124,7 @@
     </div>
   </footer>
 
-  <!-- Local JS: make sure this file is at /appointment/script.js -->
+  <!-- Local JS -->
   <script src="script.js"></script>
 </body>
 </html>
