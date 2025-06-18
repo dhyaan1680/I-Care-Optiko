@@ -1,3 +1,5 @@
+// script.js
+
 document.addEventListener('DOMContentLoaded', () => {
   // ─── DRAWER ──────────────────────────────────────────────
   function openDrawer() {
@@ -8,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('drawer').classList.remove('drawer--open');
     document.getElementById('drawerOverlay').classList.remove('active');
   }
-  // wire drawer buttons (assumes you have elements with IDs 'openBtn' and 'closeBtn' or similar)
+  // wire your existing buttons (use your actual IDs here)
   document.getElementById('openDrawerBtn')?.addEventListener('click', openDrawer);
   document.getElementById('closeDrawerBtn')?.addEventListener('click', closeDrawer);
   document.getElementById('drawerOverlay')?.addEventListener('click', closeDrawer);
@@ -53,13 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('.carousel').forEach(carouselEl => {
-    // buttons
-    carouselEl.querySelectorAll('.carousel-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const dir = parseInt(btn.dataset.direction, 10);
-        moveSlide(carouselEl, dir);
-      });
-    });
+    // wire prev/next by class name
+    const prevBtn = carouselEl.querySelector('.prev');
+    const nextBtn = carouselEl.querySelector('.next');
+    if (prevBtn) prevBtn.addEventListener('click', () => moveSlide(carouselEl, -1));
+    if (nextBtn) nextBtn.addEventListener('click', () => moveSlide(carouselEl,  1));
     // auto‑slide
     setInterval(() => moveSlide(carouselEl, 1), 3000);
   });
