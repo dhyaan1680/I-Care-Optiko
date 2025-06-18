@@ -10,15 +10,15 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('drawer').classList.remove('drawer--open');
     document.getElementById('drawerOverlay').classList.remove('active');
   }
-  // wire your existing buttons (use your actual IDs here)
-  document.getElementById('openDrawerBtn')?.addEventListener('click', openDrawer);
-  document.getElementById('closeDrawerBtn')?.addEventListener('click', closeDrawer);
-  document.getElementById('drawerOverlay')?.addEventListener('click', closeDrawer);
+  // export for your inline onclicks
+  window.openDrawer = openDrawer;
+  window.closeDrawer = closeDrawer;
 
   // ─── CAROUSELS ────────────────────────────────────────────
   const isSliding = {};
 
-  function moveSlide(carouselEl, direction) {
+  // internal slide logic (takes the actual carousel element)
+  function _moveSlide(carouselEl, direction) {
     const id = carouselEl.id;
     if (isSliding[id]) return;
     isSliding[id] = true;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const duration = 500;
 
     if (direction === 1) {
-      // next
+      // ▶ next
       track.style.transition = `transform ${duration}ms ease`;
       track.style.transform = `translateX(-${slideWidth}px)`;
       setTimeout(() => {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, duration);
 
     } else {
-      // prev
+      // ◀ prev
       track.insertBefore(slides[slides.length - 1], slides[0]);
       track.style.transition = 'none';
       track.style.transform = `translateX(-${slideWidth}px)`;
@@ -54,13 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // exported for your inline onclicks: moveSlide('carouselId', direction)
+  window.moveSlide = function(id, direction) {
+    const carouselEl = document.getElementById(id);
+    if (carouselEl) _moveSlide(carouselEl, direction);
+  };
+
+  // also wire up your prev/next buttons and auto‑slide so both work
   document.querySelectorAll('.carousel').forEach(carouselEl => {
-    // wire prev/next by class name
-    const prevBtn = carouselEl.querySelector('.prev');
-    const nextBtn = carouselEl.querySelector('.next');
-    if (prevBtn) prevBtn.addEventListener('click', () => moveSlide(carouselEl, -1));
-    if (nextBtn) nextBtn.addEventListener('click', () => moveSlide(carouselEl,  1));
-    // auto‑slide
-    setInterval(() => moveSlide(carouselEl, 1), 3000);
+    const prev = carouselEl.querySelector('.prev');
+    const next = carouselEl.querySelector('.next');
+    if (prev) prev.addEventListener('click', () => _moveSlide(carouselEl, -1));
+    if (next) next.addEventListener('click', () => _moveSlide(carouselEl,  1));
+    setInterval(() => _moveSlide(carouselEl, 1), 3000);
   });
 });
