@@ -564,6 +564,21 @@ body {
   }
 }
 
+/* Add smooth‑hardware acceleration for transforms */
+.reviews-carousel 
+.carousel-track {
+  will-change: transform;
+}
+
+/* Ensure each slide fills the viewport minus its margins on mobile */
+@media (max-width: 767px) {
+  .testimonial {
+    /* instead of 90%, calculate full width less your 0.5rem side margins */
+    flex: 0 0 calc(100% - 1rem);
+  }
+}
+
+
 
 /* BOOKING SECTION */
 .booking-section {
