@@ -40,38 +40,56 @@ function moveSlide(id, direction) {
   }
 }
 
-// Review carousel logic
-// JavaScript
-let currentReviewIndex = 0;
-const track    = document.querySelector('#reviewsCarousel .carousel-track');
-const items    = Array.from(track.children);
-const total    = items.length;
+// ====== REVIEWS CAROUSEL LOGIC ======
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('reviewsCarousel');
+  const track    = carousel.querySelector('.carousel-track');
+  const slides   = Array.from(track.children);
+  let   currentReviewIndex = 0;
 
-// Move one slide left/right on mobile
-function moveReview(direction) {
-  if (window.innerWidth >= 768) return;        // no-op on desktop
-  currentReviewIndex = (currentReviewIndex + direction + total) % total;
-  const slideWidth = items[0].getBoundingClientRect().width + 16; // gap adjustment
-  track.style.transition = 'transform 0.5s ease';
-  track.style.transform = `translateX(-${currentReviewIndex * slideWidth}px)`;
-}
-
-// Prev/Next button handlers
-document.querySelector('#reviewsCarousel .prev')
-  .addEventListener('click', () => moveReview(-1));
-document.querySelector('#reviewsCarousel .next')
-  .addEventListener('click', () => moveReview(1));
-
-// Auto‑slide every 7s, only on mobile
-setInterval(() => {
-  if (window.innerWidth < 768) moveReview(1);
-}, 7000);
-
-// Reset carousel when switching to desktop
-window.addEventListener('resize', () => {
-  if (window.innerWidth >= 768) {
-    track.style.transition = 'none';
-    track.style.transform  = 'none';
-    currentReviewIndex     = 0;
+  // Calculate one “slide width” including its left+right margins
+  function getSlideWidth() {
+    const style = getComputedStyle(slides[0]);
+    const margin =
+      parseFloat(style.marginLeft) +
+      parseFloat(style.marginRight);
+    return slides[0].getBoundingClientRect().width + margin;
   }
+
+  // Core move function
+  function moveReview(direction) {
+    // no carousel on desktop
+    if (window.innerWidth >= 768) return;
+
+    currentReviewIndex = (currentReviewIndex + direction + slides.length) % slides.length;
+    const slideW = getSlideWidth();
+
+    track.style.transition = 'transform 0.5s ease';
+    track.style.transform  = `translateX(-${currentReviewIndex * slideW}px)`;
+  }
+
+  // Wire up arrows
+  carousel.querySelector('.prev')
+    .addEventListener('click', () => moveReview(-1));
+  carousel.querySelector('.next')
+    .addEventListener('click', () => moveReview(1));
+
+  // Auto‑slide every 7s on mobile
+  const autoId = setInterval(() => {
+    if (window.innerWidth < 768) moveReview(1);
+  }, 7000);
+
+  // Reset on desktop / recalculation on resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+      track.style.transition = 'none';
+      track.style.transform  = 'none';
+      currentReviewIndex     = 0;
+    } else {
+      // Reposition in case slide width changed
+      const slideW = getSlideWidth();
+      track.style.transition = 'none';
+      track.style.transform  = `translateX(-${currentReviewIndex * slideW}px)`;
+    }
+  });
 });
