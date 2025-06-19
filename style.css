@@ -684,7 +684,7 @@ body {
 }
 .phone-inputs .country-code {
   flex: 0 0 auto;
-  width: 60px;             /* adjust smaller/larger if needed */
+  width: 90px;             /* adjust smaller/larger if needed */
   font-size: 0.9rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
