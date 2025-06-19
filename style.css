@@ -677,25 +677,41 @@ body {
   box-shadow: 0 0 0 2px rgba(200,156,93,0.2);
 }
 
+/* PHONE‑GROUP STYLES */
 .phone-inputs {
   display: flex;
-  gap: 0.5rem;
+  width: 100%;
 }
 .phone-inputs .country-code {
-  flex: 0 0 30%;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
+  flex: 0 0 auto;
+  width: 60px;             /* adjust smaller/larger if needed */
+  font-size: 0.9rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  text-align: center;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #ccc;
 }
 .phone-inputs .phone-number {
   flex: 1;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #ccc;
+}
+.phone-inputs .country-code:focus,
+.phone-inputs .phone-number:focus {
+  outline: none;
+  border-color: #c89c5d;
+  box-shadow: 0 0 0 2px rgba(200,156,93,0.2);
 }
 @media (max-width: 400px) {
   .phone-inputs .country-code {
-    flex: 0 0 25%;
+    width: 50px;
   }
 }
+
 
 
 /* Submit button */
