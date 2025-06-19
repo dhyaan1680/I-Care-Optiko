@@ -542,29 +542,28 @@ body {
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-/* FLEX CONTAINER + GAP */
+/* 1. Constrain and center the whole button group */
 .gallery-buttons {
+  max-width: 600px;   /* cap how wide the button “bar” can grow */
+  margin: 2rem auto 0;/* center it horizontally, keep top‑margin */
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
+  justify-content: center; /* center buttons within the bar */
+  gap: 1.5rem;        /* comfortable space between buttons */
 }
 
+/* 2. Make sure each button keeps its look, but doesn’t stretch */
 .gallery-buttons .view-more {
-  flex: 1 1 auto;
-  max-width: 240px;
+  flex: 0 1 auto;     /* don’t force them to fill the bar */
+  max-width: 240px;   /* as before, caps button width */
 }
 
-@media (max-width: 480px) {
+/* 3. (Optional) slightly smaller gap on very narrow phones */
+@media (max-width: 360px) {
   .gallery-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .gallery-buttons .view-more {
-    max-width: 100%;
+    gap: 1rem;
   }
 }
+
 
 
 /* Desktop layout */
