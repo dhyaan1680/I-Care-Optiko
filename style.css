@@ -542,6 +542,31 @@ body {
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
+/* FLEX CONTAINER + GAP */
+.gallery-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery-buttons .view-more {
+  flex: 1 1 auto;
+  max-width: 240px;
+}
+
+@media (max-width: 480px) {
+  .gallery-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .gallery-buttons .view-more {
+    max-width: 100%;
+  }
+}
+
+
 /* Desktop layout */
 @media (min-width: 768px) {
   /* Hide carousel arrows */
